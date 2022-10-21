@@ -22,7 +22,13 @@ type selectedArea = {
     wordBank: string[]
 
 };
-type Meaning = Object[];
+type Meaning = [{
+    [key: string]:[{
+        [key: string]:[{
+            [key: string]:Object
+        }]
+    }]
+}];
 type Synonyms = string[]
 
 const Home: NextPage = () => {
