@@ -5,7 +5,7 @@ import { useState, useId} from 'react';
 import { ChangeEvent } from 'react';
 import resizeTextArea from './components/resizeTextArea';
 import data from '../JSON/bannedWords.json';
-import frequentlyUsed from './components/frequentryUsedWords';
+import frequentlyUsed from './components/frequentlyUsedWords';
 import fetchMeaning from './components/fetchMeaning';
 
 type userInput = {
@@ -28,7 +28,7 @@ type Meaning = [{
             [key: string]:Object
         }]
     }]
-}];
+}]|[];
 type Synonyms = string[]
 
 const Home: NextPage = () => {
