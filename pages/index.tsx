@@ -3,10 +3,8 @@ import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import { useState, useId} from 'react';
 import { ChangeEvent } from 'react';
-import resizeTextArea from './components/resizeTextArea';
 import data from '../JSON/bannedWords.json';
 import frequentlyUsed from './components/frequentlyUsedWords';
-import fetchMeaning from './components/fetchMeaning';
 
 type userInput = {
     characters: string,
@@ -29,12 +27,10 @@ type Meaning = [{
         }]
     }]
 }]|[];
-type Synonyms = string[]
 
 const Home: NextPage = () => {
     const id = useId();
     const [meaning, setMeaning] = useState<Meaning>([]);
-    const [synonyms, setSynonyms] = useState<Synonyms>([]);
     const [selectedArea, setSelectedArea] = useState<selectedArea>({
         characters: "",
         selected: [],
@@ -112,6 +108,14 @@ const Home: NextPage = () => {
             console.log(data);
         })
         console.log(meaning);
+    }
+
+    const resizeTextArea = ():void => {
+        let textarea: HTMLElement | null = document.getElementById("wordHolder");
+        if(textarea){
+            textarea.style.height = "0px";
+            textarea.style.height = textarea.scrollHeight + 'px';
+        }
     }
     return (
         <div className={styles.container}>
