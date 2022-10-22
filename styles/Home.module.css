@@ -57,7 +57,7 @@
 .wordCollections {
     border: solid 1px white;
     padding: 5px 15px;
-    max-height: 310px;
+    max-height: 330px;
     grid-column: 2/-1;
     grid-row: 3/4;
 }
