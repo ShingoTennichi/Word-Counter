@@ -1,11 +1,12 @@
 import type { Word } from "../../types/types";
 import styles from "../../styles/Home.module.css";
 
-export default function Synonyms({ meaning }: { meaning: Word }): JSX.Element {
+export default function Synonyms({ meaning = [] }: { meaning: Word }): JSX.Element {
+  const word = meaning[0]?.word;
   return (
     <div className="synonyms">
       <div>
-        <h3>{"Synonyms of " + meaning[0].word}</h3>
+        <h3>{"Synonyms of " + word}</h3>
       </div>
       <table>
         <thead>

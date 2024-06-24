@@ -1,11 +1,12 @@
 import styles from "../../styles/Home.module.css";
 import type { Word } from "../../types/types";
 
-export default function Meanings({ meaning }: { meaning: Word }): JSX.Element {
+export default function Meanings({ meaning = [] }: { meaning: Word }): JSX.Element {
+  const word = meaning[0]?.word;
   return (
     <div className={styles.meanings}>
       <div>
-        <h3>{"Meaning of " + meaning[0].word}</h3>
+        <h3>{"Meaning of " + word}</h3>
       </div>
       <table>
         <thead>
